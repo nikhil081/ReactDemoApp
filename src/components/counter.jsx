@@ -4,7 +4,7 @@ class Counter extends React.Component {
     state = {
         count: 1,
         imageUrl:'https://picsum.photos/200',
-        tags:["tag1","tag2","tag3"]
+        tags:[]
     };
     render() {
         let classes = "badge m-4 badge-";
@@ -13,11 +13,16 @@ class Counter extends React.Component {
             <div>
                 <img src={this.state.imageUrl} alt=""/>
             <span className={classes}>{this.checkValue()}</span>
-            <ul>
-                {this.state.tags.map(tag=><li key={tag}>{tag}</li>)}
-            </ul>
+            {this.renderTags()}
         </div>
         );
+    }
+
+    renderTags(){
+        if(this.state.tags.length===0) return<p>"There are no tags!</p>
+        return <ul>
+        {this.state.tags.map(tag=><li key={tag}>{tag}</li>)}
+    </ul>;
     }
     checkValue() {
         const { count } = this.state;
