@@ -11,9 +11,9 @@ class Counter extends React.Component {
         classes+=this.state.count===0?"warning":"primary";
         return (
             <div>
-                <img src={this.state.imageUrl} alt=""/>
+                {/* <img src={this.state.imageUrl} alt=""/> */}
             <span className={classes}>{this.state.count}</span>
-            {this.renderTags()}
+            {/* {this.renderTags()} */}
             <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm"> Click me</button>
         </div>
         );
