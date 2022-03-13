@@ -13,10 +13,11 @@ class Counter extends React.Component {
         return (
             <div>
                 {/* <img src={this.state.imageUrl} alt=""/> */}
-                {this.props.children}
-            <span className={classes}>{this.state.count}</span>
+                {/* {this.props.children} */}
+            <span className={classes}>{this.checkValue()}</span>
             {/* {this.renderTags()} */}
-            <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm"> Click me</button>
+            <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+            <button className="btn btn-danger btn-sm m-2" onClick={this.props.onDelete}>Delete</button>
         </div>
         );
     }
