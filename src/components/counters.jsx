@@ -11,7 +11,7 @@ class Counters extends React.Component {
     } 
     handleDelete =counterId =>{
          console.log("delete event handled",counterId);
-        const counters = this.state.counters.filter(c=> c.id!=counterId);
+        const counters = this.state.counters.filter(c=> c.id!==counterId);
         this.setState({counters:counters})
     }
     render() { 
