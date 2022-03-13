@@ -2,11 +2,12 @@ import React, {  } from 'react';
 
 class Counter extends React.Component {
     state = {
-        count: 0,
+        count: this.props.value,
         imageUrl:'https://picsum.photos/200',
         tags:[]
     };
     render() {
+       // console.log("props",this.props);
         let classes = "badge m-4 badge-";
         classes+=this.state.count===0?"warning":"primary";
         return (
@@ -19,7 +20,7 @@ class Counter extends React.Component {
         );
     }
     handleIncrement=()=>{
-        console.log("event triggered",this);
+        /* console.log("event triggered",this); */
         this.setState({count:this.state.count+1})
     }
 
