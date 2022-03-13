@@ -2,7 +2,7 @@ import React, {  } from 'react';
 
 class Counter extends React.Component {
     state = {
-        count: 1,
+        count: 0,
         imageUrl:'https://picsum.photos/200',
         tags:[]
     };
@@ -12,14 +12,15 @@ class Counter extends React.Component {
         return (
             <div>
                 <img src={this.state.imageUrl} alt=""/>
-            <span className={classes}>{this.checkValue()}</span>
+            <span className={classes}>{this.state.count}</span>
             {this.renderTags()}
             <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm"> Click me</button>
         </div>
         );
     }
-    handleIncrement(){
+    handleIncrement=()=>{
         console.log("event triggered",this);
+        this.setState({count:this.state.count+1})
     }
 
     renderTags(){
